@@ -1,7 +1,8 @@
 var Mixins = OS.Mixins,
-    Widget = OS.Widget,
-    Configurator = OS.Configurator;
+    Widget = OS.Widget;
 
+// If you implement custom configurator
+// var Configurator = require('./configurator');
 var settings = require('./settings');
 
 var _Widget = React.createClass({
@@ -39,7 +40,19 @@ var _Widget = React.createClass({
         </Widget.Body>
       </Widget.Widget>
     );
-  },
+  }
+
+  // If you implement custom configurator
+  //_createConfigurator: function () {
+  //  return (
+  //    <Configurator
+  //      name={ this.getName() }
+  //      settings={ this.getSettings() }
+  //      onClose={ this.handleCloseConfigurator }
+  //      onSubmit={ this.handleConfigure }
+  //    />
+  //  );
+  //}
 });
 
 module.exports = _Widget;

@@ -59,9 +59,10 @@ module.exports = Shortcut;
 
 },{}],6:[function(require,module,exports){
 var Mixins = OS.Mixins,
-    Widget = OS.Widget,
-    Configurator = OS.Configurator;
+    Widget = OS.Widget;
 
+// If you implement custom configurator
+// var Configurator = require('./configurator');
 var settings = require('./settings');
 
 var _Widget = React.createClass({displayName: "_Widget",
@@ -99,7 +100,19 @@ var _Widget = React.createClass({displayName: "_Widget",
         )
       )
     );
-  },
+  }
+
+  // If you implement custom configurator
+  //_createConfigurator: function () {
+  //  return (
+  //    <Configurator
+  //      name={ this.getName() }
+  //      settings={ this.getSettings() }
+  //      onClose={ this.handleCloseConfigurator }
+  //      onSubmit={ this.handleConfigure }
+  //    />
+  //  );
+  //}
 });
 
 module.exports = _Widget;
